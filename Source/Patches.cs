@@ -1,6 +1,7 @@
-﻿using System;
-using Audio;
+﻿using Audio;
 using HarmonyLib;
+using System;
+using System.Collections.Generic;
 
 internal class Patches
 {
@@ -56,6 +57,38 @@ internal class Patches
                         QuickStack.QuickRestockOnClick();
                     };
                 }
+                childById = QuickStack.playerControls.GetChildById("btnMoveVehicleDown");
+                if (childById != null)
+                {
+                    childById.OnPress += delegate (XUiController _sender, int _args)
+                    {
+                        QuickStack.DumpVehicleDownOnClick();
+                    };
+                }
+                childById = QuickStack.playerControls.GetChildById("btnMoveVehicleUp");
+                if (childById != null)
+                {
+                    childById.OnPress += delegate (XUiController _sender, int _args)
+                    {
+                        QuickStack.DumpVehicleUpOnClick();
+                    };
+                }
+                childById = QuickStack.playerControls.GetChildById("btnMoveDroneDown");
+                if (childById != null)
+                {
+                    childById.OnPress += delegate (XUiController _sender, int _args)
+                    {
+                        QuickStack.DumpDroneDownOnClick();
+                    };
+                }
+                childById = QuickStack.playerControls.GetChildById("btnMoveDroneUp");
+                if (childById != null)
+                {
+                    childById.OnPress += delegate (XUiController _sender, int _args)
+                    {
+                        QuickStack.DumpDroneUpOnClick();
+                    };
+                }
             }
             catch (Exception e)
             {
@@ -74,9 +107,9 @@ internal class Patches
         }
     }
 
-   // This patch is used to add a binding to know whether the player is not accessing other loot container inventories with some exceptions like workstations.
-   // This is used in the xml file to make the quickstack icon visible only when the player inventory is open.
-   [HarmonyPatch(typeof(XUiC_BackpackWindow), "GetBindingValue")]
+    // This patch is used to add a binding to know whether the player is not accessing other loot container inventories with some exceptions like workstations.
+    // This is used in the xml file to make the quickstack icon visible only when the player inventory is open.
+    [HarmonyPatch(typeof(XUiC_BackpackWindow), "GetBindingValueInternal")]
     private class QS_3
     {
         public static void Postfix(ref bool __result, XUiC_BackpackWindow __instance, ref string value, string bindingName)
@@ -161,4 +194,5 @@ internal class Patches
             }
         }
     }
+
 }

@@ -59,6 +59,10 @@
       <HintPath>$(SDTD_DIR)\7DaysToDie_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>$(SDTD_DIR)\7DaysToDie_Data\Managed\mscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>$(SDTD_DIR)\7DaysToDie_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
@@ -75,7 +79,9 @@
     <Compile Include="Source\NetPackages\NetPackageFindOpenableContainers.cs" />
     <Compile Include="Source\NetPackages\NetPackageInvManageAction.cs" />
     <Compile Include="Source\NetPackages\NetPackageUnlockContainers.cs" />
+    <Compile Include="Source\NetPackages\NetPackageVehicleUpdateBag.cs" />
     <Compile Include="Source\Patches.cs" />
+    <Compile Include="Source\Patch_EntityDrone.cs" />
     <Compile Include="Source\QuickStack.cs" />
     <Compile Include="Source\Init.cs" />
   </ItemGroup>
@@ -90,6 +96,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="QuickStackConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UIAtlases\UIAtlas\ui_game_symbol_DumpDroneDown.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UIAtlases\UIAtlas\ui_game_symbol_DumpDroneUp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UIAtlases\UIAtlas\ui_game_symbol_DumpVehicleDown.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UIAtlases\UIAtlas\ui_game_symbol_DumpVehicleUp.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="UIAtlases\UIAtlas\ui_game_symbol_quickrestock.png">

@@ -3,6 +3,14 @@
 		<rect pos="0, 0" visible="{notlootingorvehiclestorage}">
 			<button depth="3" name="btnMoveQuickRestock" sprite="ui_game_symbol_quickrestock" tooltip_key="lblStashQuickRestock" pos="100, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]"/>
 			<button depth="3" name="btnMoveQuickStack" sprite="ui_game_symbol_quickstack" tooltip_key="lblStashQuickStack" pos="150, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]"/>
-		</rect>	
+		</rect>
+		<rect pos="0, 0" visible="{moveFollower}">
+			<button depth="3" name="btnMoveDroneDown" sprite="ui_game_symbol_DumpDroneDown" tooltip_key="lblDumpDroneDown" pos="200, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]"/>
+			<button depth="3" name="btnMoveDroneUp" sprite="ui_game_symbol_DumpDroneUp" tooltip_key="lblDumpDroneUp" pos="240, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]"/>
+		</rect>
+		<rect pos="0, 0" visible="{moveVehicle}">
+			<button depth="3" name="btnMoveVehicleDown" sprite="ui_game_symbol_DumpVehicleDown" tooltip_key="lblDumpVehicleDown" pos="300, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]"/>
+			<button depth="3" name="btnMoveVehicleUp" sprite="ui_game_symbol_DumpVehicleUp" tooltip_key="lblDumpVehicleUp" pos="340, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]"/>
+		</rect>
 	</append>
 </configs>
